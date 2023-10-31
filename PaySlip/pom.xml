@@ -38,6 +38,23 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- Apache PDFBox -->
+		<dependency>
+			<groupId>org.apache.pdfbox</groupId>
+			<artifactId>pdfbox</artifactId>
+			<version>2.0.29</version> <!-- 最新バージョンに合わせて変更 -->
+		</dependency>
+		<!-- Apache POI (Excel) -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>5.2.4</version> <!-- 最新バージョンに合わせて変更 -->
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>5.2.4</version> <!-- 最新バージョンに合わせて変更 -->
+		</dependency>
 	</dependencies>
 
 	<build>
