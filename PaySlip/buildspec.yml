@@ -1,1 +1,26 @@
 version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto11 # Javaランタイムのバージョンを指定
+
+  pre_build:
+    commands:
+      - echo "Pre-build phase" # プリビルドフェーズのコマンド
+      - git clone https://github.com/2899gy/PaySlip # GitHubリポジトリのクローン
+      - cd PaySlip # プロジェクトディレクトリに移動
+
+  build:
+    commands:
+      - echo "Build phase" # ビルドフェーズのコマンド
+      - mvn clean package # Mavenビルドの実行
+
+artifacts:
+  files:
+    - target/*.jar # ビルドアーティファクトのパス（ビルドされたJARファイルなど）
+
+post_build:
+  commands:
+    - echo "Post-build phase" # ポストビルドフェーズのコマンド
+    - aws s3 cp target/*.jar s3://payslipsource/ # アーティファクトをS3バケットにアップロード
