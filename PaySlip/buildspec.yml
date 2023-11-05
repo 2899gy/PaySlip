@@ -10,7 +10,7 @@ phases:
       - echo "Pre-build phase" # プリビルドフェーズのコマンド
       - rm -rf PaySlip  # 既存の 'PaySlip' ディレクトリを削除
       - git clone https://github.com/2899gy/PaySlip # GitHubリポジトリをクローン
-      - cd PaySlip # プロジェクトディレクトリに移動
+      - cd PaySlip/PaySlip # プロジェクトディレクトリに移動
       - ls
 
   build:
