@@ -11,7 +11,7 @@ phases:
       - rm -rf PaySlip  # 既存の 'PaySlip' ディレクトリを削除
       - git clone https://github.com/2899gy/PaySlip . # GitHubリポジトリをクローン
       - cd PaySlip # プロジェクトディレクトリに移動
-      - ls
+      - ls # デバッグ用
 
   build:
     commands:
@@ -25,4 +25,5 @@ artifacts:
 post_build:
   commands:
     - echo "Post-build phase" # ポストビルドフェーズのコマンド
+    - ls
     - aws s3 cp target/*.jar s3://payslipsource/ # アーティファクトをS3バケットにアップロード
