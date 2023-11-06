@@ -23,7 +23,7 @@ phases:
       - echo "Post-build phase" # ポストビルドフェーズのコマンド
       - ls
       - ls target
-      - aws s3 cp target/*.jar s3://payslipsource/ # アーティファクトをS3バケットにアップロード
+      - aws s3 cp target/*.jar s3://codepipeline-ap-northeast-1-850144044171 # アーティファクトをS3バケットにアップロード
 
 artifacts:
   files:
